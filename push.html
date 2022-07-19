@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>push probeer</title>
+  <script type="text/javascript">
+  <!--
+  
+  //put your ip:port here:
+  //see push.ino for ESP server side sketch
+	var ESPurl = "http://192.168.1.144:80/zend";
+
+	if(typeof(EventSource) !== "undefined") {
+		var source = new EventSource(ESPurl);
+	source.onmessage = function(event) {
+		document.getElementById("hier").innerHTML = event.data + " [data]<br>";
+	};
+
+	} else {
+		document.write("Your browser does not support EventSource, buy a better one!")
+	}
+	//-->
+  </script>
+ </head>
+ <body>
+  <div id=hier></div>
+ </body>
+</html>
