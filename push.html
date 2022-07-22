@@ -13,7 +13,7 @@
 	if(typeof(EventSource) !== "undefined") {
 		var source = new EventSource(ESPurl);
 	source.onmessage = function(event) {
-		document.getElementById("hier").innerHTML = event.data + " [data]<br>";
+		document.getElementById("myID").innerHTML = event.data + " [data]<br>";
 	};
 
 	} else {
@@ -23,6 +23,6 @@
   </script>
  </head>
  <body>
-  <div id=hier></div>
+  <div id=myID></div>
  </body>
 </html>
